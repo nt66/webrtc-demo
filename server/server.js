@@ -14,7 +14,7 @@ const PORT = 9000
 // app.use(views(path.join(__dirname,"../build/"),{extension:'html'}))
 
 router.get('/',async(ctx)=>{
-  const data = fs.readFileSync(path.resolve('./build/index.html'),'utf-8');
+  const data = fs.readFileSync(path.resolve('./build/index.html'),'utf-8')
   ctx.body = data.replace('<div id="root"></div>', `<div id="root">${ renderToString(<App />) }</div>`)
 })
 
